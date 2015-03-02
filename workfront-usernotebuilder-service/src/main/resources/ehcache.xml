@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xmlns="ehcache"
+		 xsi:schemaLocation="ehcache http://ehcache.org/ehcache.xsd"
+		 updateCheck="false"
+		 monitoring="autodetect"
+		 dynamicConfig="true">
+
+	<diskStore path="java.io.tmpdir"/>
+
+	<defaultCache
+		maxElementsInMemory="10000"
+		eternal="false"
+		timeToIdleSeconds="120"
+		timeToLiveSeconds="120"
+		overflowToDisk="true"
+		diskSpoolBufferSizeMB="30"
+		maxElementsOnDisk="10000000"
+		diskPersistent="false"
+		diskExpiryThreadIntervalSeconds="120"
+		memoryStoreEvictionPolicy="LRU"
+		statistics="false"
+		/>
+
+	<cache name="aspCache"
+		   maxElementsInMemory="1"
+		   maxElementsOnDisk="1"
+		   eternal="false"
+		   diskSpoolBufferSizeMB="20"
+		   timeToLiveSeconds="21600"
+		   memoryStoreEvictionPolicy="LFU"
+		   transactionalMode="off"
+		   overflowToDisk="true"
+		   statistics="true">
+	</cache>
+
+	<cache name="userCache"
+		   maxElementsInMemory="10000"
+		   maxElementsOnDisk="50000"
+		   eternal="false"
+		   diskSpoolBufferSizeMB="20"
+		   timeToLiveSeconds="21600"
+		   memoryStoreEvictionPolicy="LFU"
+		   transactionalMode="off"
+		   overflowToDisk="true"
+		   statistics="true">
+	</cache>
+
+	<cache name="adminCache"
+		   maxElementsInMemory="1000"
+		   maxElementsOnDisk="5000"
+		   eternal="false"
+		   diskSpoolBufferSizeMB="20"
+		   timeToLiveSeconds="21600"
+		   memoryStoreEvictionPolicy="LFU"
+		   transactionalMode="off"
+		   overflowToDisk="true"
+		   statistics="true">
+	</cache>
+
+</ehcache>
